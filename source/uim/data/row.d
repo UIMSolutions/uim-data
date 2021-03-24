@@ -4,6 +4,7 @@ import std.stdio;
 import std.conv;
 import std.string;
 import std.array;
+@safe:
 import uim.data;
 
 import Cell = uim.data.cell;

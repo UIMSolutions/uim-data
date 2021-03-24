@@ -1,10 +1,6 @@
 ﻿module uim.data.column;
 
-import std.stdio;
-import std.conv;
-import std.string;
-import std.array;
-import std.traits;
+@safe:
 import uim.data;
 
 template ColCellFunc(string name, string notFound, string found, string init = "", string result = "(found) ? result : defaultValue;") {

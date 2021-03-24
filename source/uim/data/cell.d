@@ -1,7 +1,6 @@
 module uim.data.cell;
 
-import std.conv;
-import std.math;
+@safe:
 import uim.data;
 
 /+ +/

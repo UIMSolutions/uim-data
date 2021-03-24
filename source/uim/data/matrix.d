@@ -1,5 +1,6 @@
 ﻿module uim.data.matrix;
 
+@safe:
 import uim.data;
 import std.traits;
 import std.string;

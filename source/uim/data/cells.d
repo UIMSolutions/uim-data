@@ -2,6 +2,7 @@
 
 import std.math;
 import std.array;
+@safe:
 import uim.data;
 import core.stdc.math;
 
@@ -379,7 +380,7 @@ size_t[T] cellsToAARotate(T)(T[] cells) {
 	return result; }
 
 bool isIn(T)(T value, T[] cells) {
-	foreach(cell; cells) if (cel == value) return true;
+	foreach(cell; cells) if (cell == value) return true;
 	return false;
 }
 bool isNotIn(T)(T value, T[] cells) {

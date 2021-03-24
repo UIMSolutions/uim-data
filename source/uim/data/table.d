@@ -1,11 +1,6 @@
 ﻿module uim.data.table;
 
-import std.stdio;
-import std.string;
-import std.conv;
-import std.traits;
-
-import uim.core;
+@safe:
 import uim.data;
 static import uim.data.rows;
 
@@ -102,6 +97,7 @@ template DifFuncs(string aggName) {
 	`;
 }
 
+
 class DataTable(T) if (isNumeric!T) {
 	static if (isFloatingPoint!T) {
 		T maxValue = T.max;
@@ -127,8 +123,8 @@ class DataTable(T) if (isNumeric!T) {
 	this(string[] someColNames) {
 		_colNames = someColNames; 
 
-		colName2Index = someColNames.toIndexAA; 
-		colIndex2Name = someColNames.toAAIndex;
+		colName2Index = someColNames.indexAA; 
+		colIndex2Name = someColNames.indexAAReverse;
 	}
 	this(size_t width, size_t height) { this(width); rows.length = height; }
 	this(size_t width, size_t height, T defaultValue) { this(width, height); fill(defaultValue); }

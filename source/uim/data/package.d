@@ -1,10 +1,19 @@
 ﻿module uim.data;
 
+@safe:
+
 public import std.stdio;
+public import std.string;
+public import std.conv;
 public import std.traits;
+public import std.math;
+public import std.array;
 
+// UIM libraries 
 public import uim.core;
+public import uim.oop;
 
+// uim-data packages or modules 
 public import uim.data.cell;
 public import uim.data.cells;
 public import uim.data.row;
@@ -89,16 +98,6 @@ void set(T, S, G, C)(T[][G][C] rows, C category, G group, size_t col, S value) {
 	rows[category].set(group, col, value);
 }
 
-bool isIn(T)(T value, T[] values) {
-	foreach(v; values) if (value == v) return true;
-	return false;
-}
-size_t[T] indexing(T)(T[] values) {
-	size_t[T] results;
-	foreach(i, v; values) results[v] = i;
-	return results;
-}
-
 size_t[] names2Index(string[] names, size_t[string] nameIndex) { 
 	size_t[] index; 
 	foreach(name; names) if (name in nameIndex) index ~= nameIndex[name]; 
@@ -108,6 +107,7 @@ size_t[] names2Index(string[] names, size_t[string] nameIndex) {
 unittest {
 	import std.stdio;
 
+	auto dTable = new DataTable!double(10, 10); dTable.fill(1.1);
 	foreach(i; 0..10) writeln(dTable[i]); writeln;
 	writeln; writeln("col Tests");
 	auto col = new DataColumn!double(dTable, 3);
@@ -198,4 +198,13 @@ unittest {
 	writeln("maxRow(3, [2, 3, 4]) = ", iSplice.maxRow(3, [2, 3, 4]));
 	writeln("maxCol(3) = ", iSplice.maxCol(3));
 	writeln("maxCol(3, [2, 3, 4]) = ", iSplice.maxCol(3, [2, 3, 4]));
+}
+
+@safe pure T[size_t] indexAAReverse(T)(T[] values, size_t startPos = 0) {
+	T[size_t] results;
+	foreach(i, value; values) results[i + startPos] = value;
+	return results;
+}
+unittest {
+	//
 }
