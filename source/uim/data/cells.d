@@ -1,8 +1,8 @@
 ﻿module uim.data.cells;
 
+@safe:
 import std.math;
 import std.array;
-@safe:
 import uim.data;
 import core.stdc.math;
 
@@ -470,7 +470,6 @@ unittest {
 	writeln("decsum(dCells)=>", decsum(dCells));
 	writeln("decavg(dCells)=>", decavg(dCells));
 	writeln("decgeo(dCells)=>", decgeo(dCells));
-	readln; 
 	
 	writeln("deltamin(dCells)=>", deltamin(dCells));
 	writeln("deltamax(dCells)=>", deltamax(dCells));

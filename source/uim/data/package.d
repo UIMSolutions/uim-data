@@ -111,23 +111,23 @@ unittest {
 	foreach(i; 0..10) writeln(dTable[i]); writeln;
 	writeln; writeln("col Tests");
 	auto col = new DataColumn!double(dTable, 3);
-	writeln(col);
+/* 	writeln(col);
 	writeln(col.toValues);
-	col[3] = 100;
+ */	col[3] = 100;
 	col[4] = 100;
 	col[5] = 100;
-	writeln(col.toValues);
+/* 	writeln(col.toValues);
 	foreach(i; 0..10) writeln(dTable[i]); writeln;
-	
-	writeln("col.min\t", col.min);
+ */	
+/* 	writeln("col.min\t", col.min);
 	writeln("tab.min\t", dTable.min(3));
 	writeln("col.max\t", col.max);
 	writeln("tab.max\t", dTable.max(3));
-	
+ */	
 	// col = 666;
 	dTable.rows[4] = null; col._cells[4] = null;
 	dTable.rows[5] = null; col._cells[5] = null;
-	foreach(i; 0..10) writeln(dTable[i]); writeln;
+/* 	foreach(i; 0..10) writeln(dTable[i]); writeln;
 	
 	writeln("col.sum\t", col.sum);
 	writeln("tab.sum\t", dTable.sum(3));
@@ -155,10 +155,10 @@ unittest {
 	writeln("tab.min\t", dTable.min(3, 8, 11));
 	writeln("col.max\t", col.max(8, 11));
 	writeln("tab.max\t", dTable.max(3, 8, 11));
+ */	
+	//readln;
 	
-	readln;
-	
-	writeln("\f---- START Test matrix int");
+/* 	writeln("\f---- START Test matrix int");
 	auto iMatrix = new DataMatrix!int(10, 15, 0); 
 	writeln(iMatrix);
 	foreach(i; 0..10) iMatrix[i] = i;
@@ -198,7 +198,7 @@ unittest {
 	writeln("maxRow(3, [2, 3, 4]) = ", iSplice.maxRow(3, [2, 3, 4]));
 	writeln("maxCol(3) = ", iSplice.maxCol(3));
 	writeln("maxCol(3, [2, 3, 4]) = ", iSplice.maxCol(3, [2, 3, 4]));
-}
+ */}
 
 @safe pure T[size_t] indexAAReverse(T)(T[] values, size_t startPos = 0) {
 	T[size_t] results;

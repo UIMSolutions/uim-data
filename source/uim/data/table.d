@@ -287,8 +287,8 @@ class DataTable(T) if (isNumeric!T) {
 			T[string][] results; results.length = cellsByIndex.length;
 			foreach(i, rowCellsWithIndex; cellsByIndex) if (rowCellsWithIndex) {
 				T[string] rowCellsWithName;
-				foreach(index; rowCellsWithIndex.keys) {
-					rowCellsWithName[colIndex2Name[index]] = rowCellsWithIndex[index];
+				foreach(key; rowCellsWithIndex.byKey) {
+					rowCellsWithName[colIndex2Name[key]] = rowCellsWithIndex[key];
 				}
 				results[i] = rowCellsWithName;
 			}
@@ -302,7 +302,7 @@ class DataTable(T) if (isNumeric!T) {
 			results.length = cellsNamesRows.length;
 			foreach(i, row; cellsNamesRows) {
 				T[string] rowResults;
-				foreach(name, value; row) if (name.isIn(validNames)) rowResults[name] = value;
+				foreach(name, value; row) if (validNames.canFind(name)) rowResults[name] = value;
 				results[i] = rowResults;
 			}
 		}
@@ -391,9 +391,9 @@ unittest {
 	//	writeln("iTable.difavg(2)=>", iTable.difavg(0, 2));
 	//	writeln("iTable.difgeo(2)=>", iTable.difgeo(0, 2));
 	
-	readln;
+	// readln;
 	
-	writeln("\f---- START Test table double");
+	/* writeln("\f---- START Test table double");
 	auto dTable = new DataTable!double(10, 10); dTable.fill(1.1);
 	foreach(i; 0..10) foreach(j; 0..10) dTable[i][j] = i*10.0+j;
 	foreach(i; 0..10) writeln(dTable[i]); writeln;
@@ -432,7 +432,7 @@ unittest {
 	writeln("vltmax(dTable(0))=>", dTable.vltmax(0));
 	writeln("vltsum(dTable(0))=>", dTable.vltsum(0));
 	writeln("vltavg(dTable(0))=>", dTable.vltavg(0));
-	writeln("vltgeo(dTable(0))=>", dTable.vltgeo(0));
+	writeln("vltgeo(dTable(0))=>", dTable.vltgeo(0)); */
 	
 	//	writeln("dTable.difmin=>", dTable.difmin(0, 1.0));
 	//	writeln("dTable.difmax=>", dTable.difmax(0, 1.0));

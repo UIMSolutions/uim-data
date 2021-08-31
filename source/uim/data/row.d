@@ -1,5 +1,6 @@
 ﻿module uim.data.row;
 
+@safe:
 import std.stdio;
 import std.conv;
 import std.string;
