@@ -1,8 +1,8 @@
 module uim.data.classes.cell;
 
-@safe:
 import uim.data;
 
+@safe:
 T checkFor(T, S)(S value, T minValue = T.min, T maxValue = T.max) if (isIntegral!S) {
 	import std.conv;
 	if (value < minValue) return minValue;

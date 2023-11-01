@@ -1,12 +1,13 @@
 ﻿module uim.data;
 
-
-public import std.stdio;
-public import std.string;
-public import std.conv;
-public import std.traits;
-public import std.math;
-public import std.array;
+public {
+	import std.stdio;
+	import std.string;
+	import std.conv;
+	import std.traits;
+	import std.math;
+	import std.array;
+}
 
 // UIM libraries 
 public import uim.core;
