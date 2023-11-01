@@ -1,4 +1,4 @@
-﻿module uim.data.rows;
+﻿module uim.data.classes.rows;
 
 import std.array;
 import std.string;

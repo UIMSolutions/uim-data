@@ -1,9 +1,7 @@
-﻿module uim.data.splice;
+﻿module uim.data.classes.splice;
 
-@safe:
 import uim.data;
-import std.traits;
-import std.string;
+@safe:
 
 template AggRowColSplice(string name) {
 	const char[] AggRowColSplice = `

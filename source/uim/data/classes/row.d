@@ -1,4 +1,4 @@
-﻿module source.uim.data.classes.row;
+﻿module uim.data.classes.row;
 
 @safe:
 import std.stdio;

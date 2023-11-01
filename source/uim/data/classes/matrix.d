@@ -1,4 +1,4 @@
-﻿module uim.data.matrix;
+﻿module uim.data.classes.matrix;
 
 @safe:
 import uim.data;

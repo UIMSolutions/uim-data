@@ -1,4 +1,4 @@
-module source.uim.data.classes.cell;
+module uim.data.classes.cell;
 
 @safe:
 import uim.data;

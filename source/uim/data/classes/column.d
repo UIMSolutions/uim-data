@@ -1,4 +1,4 @@
-﻿module uim.data.column;
+﻿module uim.data.classes.column;
 
 @safe:
 import uim.data;

@@ -1,6 +1,5 @@
 ﻿module uim.data;
 
-@safe:
 
 public import std.stdio;
 public import std.string;
@@ -22,6 +21,8 @@ public import uim.data.rows;
 public import uim.data.table;
 public import uim.data.matrix;
 public import uim.data.splice;
+
+@safe:
 
 alias BASE = double;
 alias NORM = int;

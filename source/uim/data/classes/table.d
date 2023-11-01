@@ -1,4 +1,4 @@
-﻿module uim.data.table;
+﻿module uim.data.classes.table;
 
 @safe:
 import uim.data;

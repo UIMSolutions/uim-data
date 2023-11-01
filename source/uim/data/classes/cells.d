@@ -1,4 +1,4 @@
-﻿module uim.data.cells;
+﻿module uim.data.classes.cells;
 
 @safe:
 import std.math;
