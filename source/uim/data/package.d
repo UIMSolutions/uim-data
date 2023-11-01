@@ -13,14 +13,7 @@ public import uim.core;
 public import uim.oop;
 
 // uim-data packages or modules 
-public import uim.data.cell;
-public import uim.data.cells;
-public import uim.data.row;
-public import uim.data.column;
-public import uim.data.rows;
-public import uim.data.table;
-public import uim.data.matrix;
-public import uim.data.splice;
+
 
 @safe:
 

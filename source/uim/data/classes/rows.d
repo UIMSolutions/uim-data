@@ -1,12 +1,8 @@
 ﻿module uim.data.classes.rows;
 
-import std.array;
-import std.string;
-import std.stdio;
-import std.conv;
-@safe:
 import uim.data;
 
+@safe:
 template RowsAggFunc(string aggName) {
 	const char[] RowsAggFunc = `
 	alias row`~aggName~` = uim.data.row.`~aggName~`;
