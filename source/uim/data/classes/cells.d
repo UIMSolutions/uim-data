@@ -391,7 +391,9 @@ bool isIn(T)(T value, T[] cells) {
 	return false;
 }
 bool isNotIn(T)(T value, T[] cells) {
-	foreach(cell; cells) if (v == cell) { return false; }
+	foreach(cell; cells) if (v == cell) { 
+      return false; 
+    }
 	return true;
 }
 

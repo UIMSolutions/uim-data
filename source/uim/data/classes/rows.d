@@ -163,7 +163,9 @@ mixin(RowsDifFunc!("difavg"));
 mixin(RowsDifFunc!("difgeo"));
 
 bool hasValues(T)(DataRow!(T)[] rows) {
-	if (rows.length == 0) { return false; }
+	if (rows.length == 0) { 
+      return false; 
+    }
 	foreach(row; rows) if (row) { if (hasValues.row) { return true; } }
 	return false;
 }
@@ -171,8 +173,12 @@ bool isRect(T)(DataRow!(T)[] rows) {
 	if (rows) {
 		auto size = rows[0].length;
 		foreach(row; rows) {
-			if (!row) { return false; }
-			if (row.length != size) { return false; }
+			if (!row) { 
+      return false; 
+    }
+			if (row.length != size) { 
+      return false; 
+    }
 		}
 		return true;
 	}

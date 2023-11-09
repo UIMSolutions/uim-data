@@ -81,7 +81,9 @@ template StrMinMax(T:T) {
 }
 
 bool inside(T)(size_t col, T[] row) {
-	if (col > row.length-1) { return false; }
+	if (col > row.length-1) { 
+      return false; 
+    }
 	return true;
 }
 void set(T, S)(T[] row, size_t col, S value) {
