@@ -1,11 +1,19 @@
 ﻿module uim.data.classes.table;
+<<<<<<< HEAD
 
 import uim.data;
 
 @safe:
+=======
+
+@safe:
+import uim.data;
+static import uim.data.classes.rows;
+
+>>>>>>> ca64a2d (Updates)
 template AggFuncs(string aggName) {
 	const char[] AggFuncs = `
-	alias rows`~aggName~` = uim.data.rows.`~aggName~`;
+	alias rows`~aggName~` = uim.data.classes.rows.`~aggName~`;
 
 	DataTable!T `~aggName~`(string target, string colName, size_t step, bool direction, T defaultResult = 0) { if (existsCol(target)) `~aggName~`(colName2Index[target], colName, step, direction, defaultResult); return this; }
 	DataTable!T `~aggName~`(size_t target, string colName, size_t step, bool direction, T defaultResult = 0) { if (existsCol(colName)) `~aggName~`(target, colName2Index[colName], step, direction, defaultResult); return this; }
@@ -67,7 +75,7 @@ template AggFuncs(string aggName) {
 
 template DifFuncs(string aggName) {
 	const char[] DifFuncs = `
-	alias rows`~aggName~` = uim.data.rows.`~aggName~`;
+	alias rows`~aggName~` = uim.data.classes.rows.`~aggName~`;
 	
 	DataTable!T `~aggName~`(string target, string colName, T distance, size_t step, bool direction, T defaultResult = 0) { if (existsCol(target)) `~aggName~`(colName2Index[target], colName, distance, step, direction, defaultResult); return this; }
 	DataTable!T `~aggName~`(size_t target, string colName, T distance, size_t step, bool direction, T defaultResult = 0) { if (existsCol(colName)) `~aggName~`(target, colName2Index[colName], distance, step, direction, defaultResult); return this; }
@@ -266,8 +274,8 @@ class DataTable(T) if (isNumeric!T) {
 	//	mixin(DifFuncs!("difgeo"));
 
 	size_t count() { return count(0, height); }
-	size_t count(size_t rowFrom, size_t rowTo) { return uim.data.rows.count(rows, rowFrom, rowTo); }
-	size_t count(size_t[] rowIndex) { return uim.data.rows.count(rows, rowIndex); }
+	size_t count(size_t rowFrom, size_t rowTo) { return uim.data.classes.rows.count(rows, rowFrom, rowTo); }
+	size_t count(size_t[] rowIndex) { return uim.data.classes.rows.count(rows, rowIndex); }
 
 	auto copy() { return new DataTable!T(this); }
 	override string toString() {
@@ -277,10 +285,10 @@ class DataTable(T) if (isNumeric!T) {
 		return result;
 	}
 
-	auto changedRows() { return uim.data.rows.changedRows(rows); }
+	auto changedRows() { return uim.data.classes.rows.changedRows(rows); }
 	T[size_t][] changedCellsByIndex() { 
 		auto cRows = this.changedRows;
-		return uim.data.rows.changedCellsByIndex(cRows); }
+		return uim.data.classes.rows.changedCellsByIndex(cRows); }
 	T[string][] changedCellsByName() { 
 		if (auto cellsByIndex = changedCellsByIndex) {
 			T[string][] results; results.length = cellsByIndex.length;
@@ -323,8 +331,8 @@ class DataTable(T) if (isNumeric!T) {
 		return result;
 	}
 
-	DataTable!T remove(size_t rowFrom, size_t rowTo) { uim.data.rows.remove(rows, rowFrom, rowTo); return this; }
-	DataTable!T remove(size_t[] values) { uim.data.rows.remove(rows, values); return this; }
+	DataTable!T remove(size_t rowFrom, size_t rowTo) { uim.data.classes.rows.remove(rows, rowFrom, rowTo); return this; }
+	DataTable!T remove(size_t[] values) { uim.data.classes.rows.remove(rows, values); return this; }
 
 	auto columnCells(size_t col) {
 		T[] cells; 

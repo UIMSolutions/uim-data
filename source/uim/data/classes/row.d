@@ -1,9 +1,23 @@
+<<<<<<< HEAD
 ﻿module uim.data.classes.row;
 
 import uim.data;
 
 @safe:
 import Cell = uim.data.cell;
+=======
+﻿/***********************************************************************************
+*	Copyright: ©2015-2023 Ozan Nurettin Süel (sicherheitsschmiede)                   *
+*	License  : Licensed under Apache 2 [https://apache.org/licenses/LICENSE-2.0.txt] *
+*	Author   : Ozan Nurettin Süel (Sicherheitsschmiede)										           * 
+***********************************************************************************/
+module uim.data.classes.row;
+
+@safe:
+import uim.data;
+
+import Cell = uim.data.classes.cell;
+>>>>>>> ca64a2d (Updates)
 
 enum RowStatus {
 	invalid,
@@ -13,7 +27,7 @@ enum RowStatus {
 
 template RowAggFunc(string aggName) {
 	const char[] RowAggFunc = `
-	alias cells`~aggName~` = uim.data.cells.`~aggName~`;
+	alias cells`~aggName~` = uim.data.classes.cells.`~aggName~`;
 
 	auto `~aggName~`(size_t target, T defaultResult = 0) { 
 		this[target] = `~aggName~`(0, length, defaultResult); return this; }
@@ -36,7 +50,7 @@ template RowAggFunc(string aggName) {
 
 template RowDifFunc(string aggName) {
 	const char[] RowDifFunc = `
-	alias cells`~aggName~` = uim.data.cells.`~aggName~`;
+	alias cells`~aggName~` = uim.data.classes.cells.`~aggName~`;
 	auto `~aggName~`(T)(size_t target, int distance, T defaultResult = 0) { this[target] = cells`~aggName~`(cells, distance, defaultResult); return this; }
 	auto `~aggName~`(T)(size_t target, size_t[] cols, int distance, T defaultResult = 0) { this[target] = cells`~aggName~`(cells, cols, distance, defaultResult); return this; }
 	auto `~aggName~`(size_t target,size_t from, size_t to, int distance, T defaultResult = 0) { this[target] = cells`~aggName~`(cells, from, to, distance, defaultResult); return this; }
@@ -61,7 +75,7 @@ class DataRow(T) {
 	T[] originCells;
 
 	this(size_t aLength) { cells.length = aLength; originCells.length = aLength; }
-	this(size_t aLength, T aValue) { this(aLength); uim.data.cells.fill(originCells, aValue); uim.data.cells.fill(cells, aValue); }
+	this(size_t aLength, T aValue) { this(aLength); uim.data.classes.cells.fill(originCells, aValue); uim.data.classes.cells.fill(cells, aValue); }
 	this(T[] values) { 
 		this(values.length);  
 		foreach(i, value; values) { 
@@ -70,7 +84,7 @@ class DataRow(T) {
 	}
 	this(DataRow!T row) { this(row.cells); }
 
-	DataRow!T  fill(T aValue) { uim.data.cells.fill(cells, aValue); return this; }
+	DataRow!T  fill(T aValue) { uim.data.classes.cells.fill(cells, aValue); return this; }
 	DataRow!T  fill(T aValue, size_t[] cols) { cells.fill(aValue, cols); return this; }
 	DataRow!T  fill(T aValue, size_t from, size_t to) { cells.fill(aValue, from, to); return this; }
 
@@ -184,7 +198,7 @@ auto rowColsToCells(T)(DataRow!(T) row, size_t[] cols) {
 
 unittest {
 	import std.stdio;
-	writeln("Loading uim.data...");
+	writeln("Loading uim.data.classes...");
 	
 	writeln("---- START Test row int");
 	

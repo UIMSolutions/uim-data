@@ -1,25 +1,37 @@
+<<<<<<< HEAD
 ﻿module uim.data.classes.splice;
+=======
+﻿/***********************************************************************************
+*	Copyright: ©2015-2023 Ozan Nurettin Süel (sicherheitsschmiede)                   *
+*	License  : Licensed under Apache 2 [https://apache.org/licenses/LICENSE-2.0.txt] *
+*	Author   : Ozan Nurettin Süel (Sicherheitsschmiede)										           * 
+***********************************************************************************/
+module uim.data.classes.splice;
+>>>>>>> ca64a2d (Updates)
 
 import uim.data;
+<<<<<<< HEAD
 @safe:
+=======
+>>>>>>> ca64a2d (Updates)
 
 template AggRowColSplice(string name) {
 	const char[] AggRowColSplice = `
-T `~name~`Row(size_t posY, T defaultValue = 0) { return uim.data.cells.`~name~`(row(posY), defaultValue); }
-T `~name~`Row(size_t posY, size_t[] posX, T defaultValue = 0) { return uim.data.cells.`~name~`(row(posY), posX, defaultValue); }
-T `~name~`Row(size_t posY, size_t startX, size_t endX, T defaultValue = 0) { return uim.data.cells.`~name~`(row(posY), startX, endX, defaultValue); }
+T `~name~`Row(size_t posY, T defaultValue = 0) { return uim.data.classes.cells.`~name~`(row(posY), defaultValue); }
+T `~name~`Row(size_t posY, size_t[] posX, T defaultValue = 0) { return uim.data.classes.cells.`~name~`(row(posY), posX, defaultValue); }
+T `~name~`Row(size_t posY, size_t startX, size_t endX, T defaultValue = 0) { return uim.data.classes.cells.`~name~`(row(posY), startX, endX, defaultValue); }
 
-T `~name~`Rows(size_t[] posY, T defaultValue = 0) { T[] result; foreach(y; posY) result ~= uim.data.cells.`~name~`(row(y), defaultValue); return uim.data.cells.`~name~`(result, defaultValue); }
-T `~name~`Rows(size_t[] posY, size_t[] posX, T defaultValue = 0) { T[] result; foreach(y; posY) result ~= uim.data.cells.`~name~`(row(y), posX, defaultValue); return uim.data.cells.`~name~`(result, defaultValue); }
-T `~name~`Rows(size_t[] posY, size_t startX, size_t endX, T defaultValue = 0) { T[] result; foreach(y; posY) result ~= uim.data.cells.`~name~`(row(y), startX, endX, defaultValue); return uim.data.cells.`~name~`(result, defaultValue); }
+T `~name~`Rows(size_t[] posY, T defaultValue = 0) { T[] result; foreach(y; posY) result ~= uim.data.classes.cells.`~name~`(row(y), defaultValue); return uim.data.classes.cells.`~name~`(result, defaultValue); }
+T `~name~`Rows(size_t[] posY, size_t[] posX, T defaultValue = 0) { T[] result; foreach(y; posY) result ~= uim.data.classes.cells.`~name~`(row(y), posX, defaultValue); return uim.data.classes.cells.`~name~`(result, defaultValue); }
+T `~name~`Rows(size_t[] posY, size_t startX, size_t endX, T defaultValue = 0) { T[] result; foreach(y; posY) result ~= uim.data.classes.cells.`~name~`(row(y), startX, endX, defaultValue); return uim.data.classes.cells.`~name~`(result, defaultValue); }
 
-T `~name~`Col(size_t posX, T defaultValue = 0) { return uim.data.cells.`~name~`(col(posX), defaultValue); }
-T `~name~`Col(size_t posX, size_t[] posY, T defaultValue = 0) { return uim.data.cells.`~name~`(col(posX), posY, defaultValue); }
-T `~name~`Col(size_t posX, size_t startY, size_t endY, T defaultValue = 0) { return uim.data.cells.`~name~`(col(posX), startY, endY, defaultValue); }
+T `~name~`Col(size_t posX, T defaultValue = 0) { return uim.data.classes.cells.`~name~`(col(posX), defaultValue); }
+T `~name~`Col(size_t posX, size_t[] posY, T defaultValue = 0) { return uim.data.classes.cells.`~name~`(col(posX), posY, defaultValue); }
+T `~name~`Col(size_t posX, size_t startY, size_t endY, T defaultValue = 0) { return uim.data.classes.cells.`~name~`(col(posX), startY, endY, defaultValue); }
 
-T `~name~`Cols(size_t[] posX, T defaultValue = 0) { T[] result; foreach(x; posX) result ~= uim.data.cells.`~name~`(col(x), defaultValue); return uim.data.cells.`~name~`(result, defaultValue); }
-T `~name~`Cols(size_t[] posX, size_t[] posY, T defaultValue = 0) { T[] result; foreach(x; posX) result ~= uim.data.cells.`~name~`(col(x), posY, defaultValue); return uim.data.cells.`~name~`(result, defaultValue); }
-T `~name~`Cols(size_t[] posX, size_t startY, size_t endY, T defaultValue = 0) { T[] result; foreach(x; posX) result ~= uim.data.cells.`~name~`(col(x), startY, endY, defaultValue); return uim.data.cells.`~name~`(result, defaultValue); }
+T `~name~`Cols(size_t[] posX, T defaultValue = 0) { T[] result; foreach(x; posX) result ~= uim.data.classes.cells.`~name~`(col(x), defaultValue); return uim.data.classes.cells.`~name~`(result, defaultValue); }
+T `~name~`Cols(size_t[] posX, size_t[] posY, T defaultValue = 0) { T[] result; foreach(x; posX) result ~= uim.data.classes.cells.`~name~`(col(x), posY, defaultValue); return uim.data.classes.cells.`~name~`(result, defaultValue); }
+T `~name~`Cols(size_t[] posX, size_t startY, size_t endY, T defaultValue = 0) { T[] result; foreach(x; posX) result ~= uim.data.classes.cells.`~name~`(col(x), startY, endY, defaultValue); return uim.data.classes.cells.`~name~`(result, defaultValue); }
 `;
 }
 

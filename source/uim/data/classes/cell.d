@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+/***********************************************************************************
+*	Copyright: ©2015-2023 Ozan Nurettin Süel (sicherheitsschmiede)                   *
+*	License  : Licensed under Apache 2 [https://apache.org/licenses/LICENSE-2.0.txt] *
+*	Author   : Ozan Nurettin Süel (Sicherheitsschmiede)										           * 
+***********************************************************************************/
+>>>>>>> ca64a2d (Updates)
 module uim.data.classes.cell;
 
 import uim.data;
@@ -42,7 +50,7 @@ T diff(T)(T left, T middle, T right, T distance = 1) if (isNumeric!T) {
 unittest {
 	import std.stdio;
 	
-	writeln("Testing uim.data.cell...");
+	writeln("Testing uim.data.classes.cell...");
 
 	writeln("---- START Test cell...(int)");
 	

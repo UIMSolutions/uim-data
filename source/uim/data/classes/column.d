@@ -40,7 +40,7 @@ template ColCellFunc(string name, string notFound, string found, string init = "
 
 template ColCellCollectFunc(string name) {
 	const char[] ColCellCollectFunc = `
-	alias cells`~name~` = uim.data.cells.`~name~`;
+	alias cells`~name~` = uim.data.classes.cells.`~name~`;
  
 	T `~name~`(T defaultValue = 0) { return `~name~`(0, height, defaultValue); }
 	T `~name~`(size_t from, size_t to, T defaultValue = 0) {

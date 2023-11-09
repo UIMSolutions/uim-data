@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 ﻿module uim.data.classes.cells;
+=======
+﻿/***********************************************************************************
+*	Copyright: ©2015-2023 Ozan Nurettin Süel (sicherheitsschmiede)                   *
+*	License  : Licensed under Apache 2 [https://apache.org/licenses/LICENSE-2.0.txt] *
+*	Author   : Ozan Nurettin Süel (Sicherheitsschmiede)										           * 
+***********************************************************************************/
+module uim.data.classes.cells;
+>>>>>>> ca64a2d (Updates)
 
 @safe:
-import std.math;
-import std.array;
 import uim.data;
 import core.stdc.math;
 
@@ -135,7 +142,7 @@ S[] opCast(S, T)(T[] cells) {
 	foreach(i, c; cells) result[i] = cast(S)c;
 	return result; }
 
-alias celladd = uim.data.cell.add;
+alias celladd = uim.data.classes.cell.add;
 mixin(CellsAggFunc!"add");
 T add(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) { 
 	if (!cells) return defaultResult;
@@ -150,7 +157,7 @@ T add(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	}
 }
 
-alias cellsub = uim.data.cell.sub;
+alias cellsub = uim.data.classes.cell.sub;
 mixin(CellsAggFunc!"sub");
 T sub(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) { 
 	if (!cells) return defaultResult;
@@ -165,7 +172,7 @@ T sub(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	}
 }
 
-alias cellmul = uim.data.cell.mul;
+alias cellmul = uim.data.classes.cell.mul;
 mixin(CellsAggFunc!"mul");
 T mul(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) { 
 	if (!cells) return defaultResult;
@@ -179,7 +186,7 @@ T mul(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 			return result; 
 	}
 }
-alias celldiv = uim.data.cell.div;
+alias celldiv = uim.data.classes.cell.div;
 mixin(CellsAggFunc!"div");
 T div(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) { 
 	if (!cells) return defaultResult;
@@ -194,7 +201,7 @@ T div(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	}
 }
 
-alias cellmin = uim.data.cell.min;
+alias cellmin = uim.data.classes.cell.min;
 mixin(CellsAggFunc!"min");
 T min(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	if (!cells) return defaultResult;
@@ -209,7 +216,7 @@ T min(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	}
 }
 
-alias cellmax = uim.data.cell.max;
+alias cellmax = uim.data.classes.cell.max;
 mixin(CellsAggFunc!"max");
 T max(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	if (!cells) return defaultResult;
@@ -224,7 +231,7 @@ T max(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	}
 }
 
-alias cellsum = uim.data.cell.sum;
+alias cellsum = uim.data.classes.cell.sum;
 mixin(CellsAggFunc!"sum");
 T sum(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	if (!cells) return defaultResult;
@@ -246,7 +253,7 @@ T neg(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	mixin(Switch!("result += (cell < 0) ? 1 : 0"));
 }
 
-alias cellavg = uim.data.cell.avg;
+alias cellavg = uim.data.classes.cell.avg;
 mixin(CellsAggFunc!"avg");
 T avg(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) { 
 	if (!cells) return defaultResult;
@@ -261,7 +268,7 @@ T avg(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	}
 }
 
-alias cellgeo = uim.data.cell.geo;
+alias cellgeo = uim.data.classes.cell.geo;
 mixin(CellsAggFunc!"geo");
 T geo(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 	if (!cells) return defaultResult;
@@ -275,35 +282,35 @@ T geo(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 		return cast(T)core.stdc.math.pow(abs(result), 1.0/cells.length); }
 }
 
-alias celldelta = uim.data.cell.delta;
+alias celldelta = uim.data.classes.cell.delta;
 mixin(CellsAggFunc!("delta", "sum"));
 mixin(CellsAggFunc!("delta", "avg"));
 mixin(CellsAggFunc!("delta", "geo"));
 mixin(CellsAggFunc!("delta", "min"));
 mixin(CellsAggFunc!("delta", "max"));
 
-alias cellinc = uim.data.cell.inc;
+alias cellinc = uim.data.classes.cell.inc;
 mixin(CellsAggFunc!("inc", "sum"));
 mixin(CellsAggFunc!("inc", "avg"));
 mixin(CellsAggFunc!("inc", "geo"));
 mixin(CellsAggFunc!("inc", "min"));
 mixin(CellsAggFunc!("inc", "max"));
 
-alias celldec = uim.data.cell.dec;
+alias celldec = uim.data.classes.cell.dec;
 mixin(CellsAggFunc!("dec", "sum"));
 mixin(CellsAggFunc!("dec", "avg"));
 mixin(CellsAggFunc!("dec", "geo"));
 mixin(CellsAggFunc!("dec", "min"));
 mixin(CellsAggFunc!("dec", "max"));
 
-alias cellvlt = uim.data.cell.vlt;
+alias cellvlt = uim.data.classes.cell.vlt;
 mixin(CellsAggFunc!("vlt", "sum"));
 mixin(CellsAggFunc!("vlt", "avg"));
 mixin(CellsAggFunc!("vlt", "geo"));
 mixin(CellsAggFunc!("vlt", "min"));
 mixin(CellsAggFunc!("vlt", "max"));
 
-alias celldif = uim.data.cell.dif;
+alias celldif = uim.data.classes.cell.dif;
 mixin(CellsDifFunc!"difsum");
 T difsum(T)(T[] cells, size_t cellFrom, size_t cellTo, int distance, T defaultResult = 0) {
 	if (!cells) return defaultResult;
@@ -380,17 +387,17 @@ size_t[T] cellsToAARotate(T)(T[] cells) {
 	return result; }
 
 bool isIn(T)(T value, T[] cells) {
-	foreach(cell; cells) if (cell == value) return true;
+	foreach(cell; cells) if (cell == value) { return true; }
 	return false;
 }
 bool isNotIn(T)(T value, T[] cells) {
-	foreach(cell; cells) if (v == cell) return false;
+	foreach(cell; cells) if (v == cell) { return false; }
 	return true;
 }
 
 unittest {
 	import std.stdio;
-	writeln("Testing uim.data.cells...");
+	writeln("Testing uim.data.classes.cells...");
 	
 	int[] cells = newCells(10, 1);
 	foreach(i; 0..cells.length) cells[i] = cast(int)i; cells[9] = 2;
@@ -402,7 +409,7 @@ unittest {
 	writeln("div(cells)=>", div(cells));
 	
 	writeln("min(cells)=>", min(cells));
-	writeln("max(cells)=>", uim.data.cells.max(cells));
+	writeln("max(cells)=>", uim.data.classes.cells.max(cells));
 	writeln("sum(cells)=>", sum(cells));
 	writeln("avg(cells)=>", avg(cells));
 	writeln("geo(cells)=>", geo(cells));
