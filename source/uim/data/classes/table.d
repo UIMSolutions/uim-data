@@ -1,16 +1,9 @@
 ﻿module uim.data.classes.table;
-<<<<<<< HEAD
-
-import uim.data;
-
-@safe:
-=======
 
 @safe:
 import uim.data;
 static import uim.data.classes.rows;
 
->>>>>>> ca64a2d (Updates)
 template AggFuncs(string aggName) {
 	const char[] AggFuncs = `
 	alias rows`~aggName~` = uim.data.classes.rows.`~aggName~`;

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-﻿module uim.data.classes.row;
-
-import uim.data;
-
-@safe:
-import Cell = uim.data.cell;
-=======
 ﻿/***********************************************************************************
 *	Copyright: ©2015-2023 Ozan Nurettin Süel (sicherheitsschmiede)                   *
 *	License  : Licensed under Apache 2 [https://apache.org/licenses/LICENSE-2.0.txt] *
@@ -17,7 +9,6 @@ module uim.data.classes.row;
 import uim.data;
 
 import Cell = uim.data.classes.cell;
->>>>>>> ca64a2d (Updates)
 
 enum RowStatus {
 	invalid,
