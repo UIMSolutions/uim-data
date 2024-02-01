@@ -167,7 +167,7 @@ T sub(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 		case 1: return cells[cellStart];
 		default: 
 			T result = cells[cellStart]; 
-			foreach(cell; cells[cellStart+1..cellEnd]) result -= cell; 
+			cells[cellStart+1..cellEnd].each!(cell => result -= cell); 
 			return result; 
 	}
 }
@@ -182,7 +182,7 @@ T mul(T)(T[] cells, size_t cellFrom, size_t cellTo, T defaultResult = 0) {
 		case 1: return cells[cellStart];
 		default: 
 			T result = cells[cellStart]; 
-			foreach(cell; cells[cellStart+1..cellEnd]) result *= cell; 
+			cells[cellStart+1..cellEnd].each!(cell => result *= cell); 
 			return result; 
 	}
 }
